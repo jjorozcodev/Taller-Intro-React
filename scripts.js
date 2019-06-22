@@ -30,14 +30,16 @@ function Header() {
 };
 
 // Componente Película
-function Movie(props) {
-    return (
-        <article>
-            <h3>{props.nombre}</h3>
-            <div className="year">Publicada en {props.year}</div>
-            <img alt="Portada de Ironman" src={props.foto} />
-        </article>
-    )
+class Movie extends React.Component {
+    render(){
+        return (
+            <article>
+                <h3>{this.props.nombre}</h3>
+                <div className="year">Publicada en {this.props.year}</div>
+                <img alt="Portada de Ironman" src={this.props.foto} />
+            </article>
+        )
+    }
 };
 
 const seed = [
@@ -72,26 +74,28 @@ const seed = [
 ];
 
 // RENDERIZAR TODA LA PÁGINA CON REACT
-function ContenedorApp() {
-    return (
-        <React.Fragment>
-            <Header />
-            <h2>FASE ONE</h2>
-            <section>
-                {seed.map(function (film) {
-                    return (
-                        <Movie
-                            key={film.id}
-                            nombre={film.name}
-                            year={film.year}
-                            foto={film.cover}
-                        />
-                    );
-                })}
-            </section>
-        </React.Fragment>
-
-    );
+class ContenedorApp extends React.Component {
+    render() {
+        return (
+            <React.Fragment>
+                <Header />
+                <h2>FASE ONE</h2>
+                <section>
+                    {seed.map(function (film) {
+                        return (
+                            <Movie
+                                key={film.id}
+                                nombre={film.name}
+                                year={film.year}
+                                foto={film.cover}
+                            />
+                        );
+                    })}
+                </section>
+            </React.Fragment>
+    
+        )
+    }
 }
 
 ReactDOM.render(<ContenedorApp />, document.getElementById('app'));
