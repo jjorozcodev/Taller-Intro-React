@@ -18,16 +18,27 @@
 
 // Usando JSX y funciones para crear componentes
 function Header() {
-     return (
-         <header>
-             <h1>Universo Cinematográfico de Marvel</h1>
-             <p>El inicio de toda una <strong>saga del infinito</strong>.</p>
-             <p className="may">
-                 ¡El inicio de toda <strong> una saga del infinito </strong> !
+    return (
+        <header>
+            <h1>Universo Cinematográfico de Marvel</h1>
+            <p>El inicio de toda una <strong>saga del infinito</strong>.</p>
+            <p className="may">
+                ¡El inicio de toda <strong> una saga del infinito </strong> !
              </p>
-         </header>
-     )
- };
+        </header>
+    )
+};
+
+// Componente Película
+function Movie() {
+    return (
+        <article>
+            <h3>Ironman</h3>
+            <div className="year">Publicada en 2008</div>
+            <img alt="Portada de Ironman" src="https://cl.buscafs.com/www.tomatazos.com/public/uploads/images/170592.jpg" />
+        </article>
+    )
+};
 
 // RENDERIZAR TODA LA PÁGINA CON REACT
 function ContenedorApp() {
@@ -36,11 +47,9 @@ function ContenedorApp() {
             <Header />
             <h2>FASE ONE</h2>
             <section>
-                <article>
-                    <h3>Ironman</h3>
-                    <div className="year">Publicada en 2008</div>
-                    <img alt="Portada de Ironman" src="https://cl.buscafs.com/www.tomatazos.com/public/uploads/images/170592.jpg" />
-                </article>
+                <Movie />
+                <Movie />
+                <Movie />
                 <article>
                     <h3>Thor</h3>
                     <div className="year">Publicada en 2011</div>
