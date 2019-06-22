@@ -15,3 +15,7 @@ section {
 img {
   width: 500px;
 }
+
+.may {
+  text-transform: uppercase;
+}

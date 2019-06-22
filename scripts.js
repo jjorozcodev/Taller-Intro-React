@@ -1,7 +1,8 @@
 const elemento = React.createElement(
     'p',
-    null,
-    '¡El inicio de toda una saga del infinito!'
+    {className: 'may'},
+    '¡El inicio de toda una ',
+    React.createElement('strong', null, 'saga del infinito'), '!'
 );
 
 ReactDOM.render(elemento, document.getElementById('app'));
