@@ -21,7 +21,6 @@ function Header() {
     return (
         <header>
             <h1>Universo Cinematográfico de Marvel</h1>
-            <p>El inicio de toda una <strong>saga del infinito</strong>.</p>
             <p className="may">
                 ¡El inicio de toda <strong> una saga del infinito </strong> !
              </p>
@@ -75,13 +74,22 @@ const seed = [
 
 // RENDERIZAR TODA LA PÁGINA CON REACT
 class ContenedorApp extends React.Component {
+
+    constructor(props){
+        super(props);
+
+        this.state = {
+            peliculas: seed
+        }
+    }
+
     render() {
         return (
             <React.Fragment>
                 <Header />
                 <h2>FASE ONE</h2>
                 <section>
-                    {seed.map(function (film) {
+                    {this.state.peliculas.map(function (film) {
                         return (
                             <Movie
                                 key={film.id}
