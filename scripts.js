@@ -81,11 +81,29 @@ class ContenedorApp extends React.Component {
         this.state = {
             peliculas: [].concat(seed)
         }
+
+        this.handleClick = this.handleClick.bind(this);
     }
 
     handleClick(event) {
         event.preventDefault();
-        console.log(event);
+        console.log(this.state.peliculas);
+
+        const nuevaPeli = {
+            id: "tt12345",
+            name: "Hulk",
+            year: 2008,
+            cover: "https://cl.buscafs.com/www.tomatazos.com/public/uploads/images/170597.jpg"
+        }
+
+        // Funciona de ésta manera, sin embargo no garantiza que en un bombardeo de clicks se obtenga el último valor de state.
+        //const lista = this.state.peliculas.concat(nuevaPeli);
+
+        this.setState(function(prevState)
+        {
+            
+            return {peliculas: prevState.peliculas.concat(nuevaPeli)};
+        })
       }
 
     render() {
