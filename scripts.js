@@ -42,34 +42,34 @@ function Movie(props) {
 
 const seed = [
     {
-      id: "tt0117705",
-      name: "Ironman",
-      year: "2008",
-      cover:
-        "https://cl.buscafs.com/www.tomatazos.com/public/uploads/images/170592.jpg"
+        id: "tt0117705",
+        name: "Ironman",
+        year: "2008",
+        cover:
+            "https://cl.buscafs.com/www.tomatazos.com/public/uploads/images/170592.jpg"
     },
     {
-      id: "tt0158811",
-      name: "Thor",
-      year: "2011",
-      cover:
-        "https://cl.buscafs.com/www.tomatazos.com/public/uploads/images/170606.jpg"
+        id: "tt0158811",
+        name: "Thor",
+        year: "2011",
+        cover:
+            "https://cl.buscafs.com/www.tomatazos.com/public/uploads/images/170606.jpg"
     },
     {
-      id: "tt0062622",
-      name: "Capitán América: El primer vengador",
-      year: "2011",
-      cover:
-        "https://cl.buscafs.com/www.tomatazos.com/public/uploads/images/170605.jpeg"
+        id: "tt0062622",
+        name: "Capitán América: El primer vengador",
+        year: "2011",
+        cover:
+            "https://cl.buscafs.com/www.tomatazos.com/public/uploads/images/170605.jpeg"
     },
     {
-      id: "tt0062633",
-      name: "The Avengers",
-      year: "2012",
-      cover:
-        "https://cl.buscafs.com/www.tomatazos.com/public/uploads/images/170610.jpg"
+        id: "tt0062633",
+        name: "The Avengers",
+        year: "2012",
+        cover:
+            "https://cl.buscafs.com/www.tomatazos.com/public/uploads/images/170610.jpg"
     }
-  ];
+];
 
 // RENDERIZAR TODA LA PÁGINA CON REACT
 function ContenedorApp() {
@@ -78,10 +78,16 @@ function ContenedorApp() {
             <Header />
             <h2>FASE ONE</h2>
             <section>
-                <Movie id={seed[0].id} nombre={seed[0].name} year = {seed[0].year} foto={seed[0].cover} />
-                <Movie id={seed[1].id} nombre={seed[1].name} year = {seed[1].year} foto={seed[1].cover} />
-                <Movie id={seed[2].id} nombre={seed[2].name} year = {seed[2].year} foto={seed[2].cover} />
-                <Movie id={seed[3].id} nombre={seed[3].name} year = {seed[3].year} foto={seed[3].cover} />
+                {seed.map(function (film) {
+                    return (
+                        <Movie
+                            key={film.id}
+                            nombre={film.name}
+                            year={film.year}
+                            foto={film.cover}
+                        />
+                    );
+                })}
             </section>
         </React.Fragment>
 
