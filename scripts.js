@@ -79,7 +79,7 @@ class ContenedorApp extends React.Component {
         super(props);
 
         this.state = {
-            peliculas: seed
+            peliculas: [].concat(seed)
         }
     }
 
