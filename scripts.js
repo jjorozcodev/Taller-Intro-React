@@ -6,14 +6,27 @@
 // );
 
 // Usando JSX
-const elemento = (
-    <header>
-        <h1>Universo Cinematográfico de Marvel</h1>
-        <p>El inicio de toda una <strong>saga del infinito</strong>.</p>
-        <p className="may">
-            ¡El inicio de toda <strong> una saga del infinito </strong> !
-        </p>
-    </header>
-);
+// const elemento = (
+//     <header>
+//         <h1>Universo Cinematográfico de Marvel</h1>
+//         <p>El inicio de toda una <strong>saga del infinito</strong>.</p>
+//         <p className="may">
+//             ¡El inicio de toda <strong> una saga del infinito </strong> !
+//         </p>
+//     </header>
+// );
 
-ReactDOM.render(elemento, document.getElementById('encabezado'));
+// Usando JSX y funciones para crear componentes
+function Header() {
+    return (
+        <header>
+            <h1>Universo Cinematográfico de Marvel</h1>
+            <p>El inicio de toda una <strong>saga del infinito</strong>.</p>
+            <p className="may">
+                ¡El inicio de toda <strong> una saga del infinito </strong> !
+            </p>
+        </header>
+    )
+};
+
+ReactDOM.render(<Header />, document.getElementById('encabezado'));
