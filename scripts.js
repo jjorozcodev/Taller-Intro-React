@@ -83,10 +83,16 @@ class ContenedorApp extends React.Component {
         }
     }
 
+    handleClick(event) {
+        event.preventDefault();
+        console.log(event);
+      }
+
     render() {
         return (
             <React.Fragment>
                 <Header />
+                 <button type="button" onClick={this.handleClick}>Agregar Película</button>
                 <h2>FASE ONE</h2>
                 <section>
                     {this.state.peliculas.map(function (film) {
