@@ -11,3 +11,7 @@ section {
 .year {
   font-style: italic;
 }
+
+img {
+  width: 500px;
+}
