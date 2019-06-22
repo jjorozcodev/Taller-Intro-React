@@ -30,15 +30,46 @@ function Header() {
 };
 
 // Componente Película
-function Movie() {
+function Movie(props) {
     return (
         <article>
-            <h3>Ironman</h3>
-            <div className="year">Publicada en 2008</div>
-            <img alt="Portada de Ironman" src="https://cl.buscafs.com/www.tomatazos.com/public/uploads/images/170592.jpg" />
+            <h3>{props.nombre}</h3>
+            <div className="year">Publicada en {props.year}</div>
+            <img alt="Portada de Ironman" src={props.foto} />
         </article>
     )
 };
+
+const seed = [
+    {
+      id: "tt0117705",
+      name: "Ironman",
+      year: "2008",
+      cover:
+        "https://cl.buscafs.com/www.tomatazos.com/public/uploads/images/170592.jpg"
+    },
+    {
+      id: "tt0158811",
+      name: "Thor",
+      year: "2011",
+      cover:
+        "https://cl.buscafs.com/www.tomatazos.com/public/uploads/images/170606.jpg"
+    },
+    {
+      id: "tt0062622",
+      name: "Capitán América: El primer vengador",
+      year: "2011",
+      cover:
+        "https://cl.buscafs.com/www.tomatazos.com/public/uploads/images/170605.jpeg"
+    },
+    {
+      id: "tt0062633",
+      name: "The Avengers",
+      year: "2012",
+      cover:
+        "https://cl.buscafs.com/www.tomatazos.com/public/uploads/images/170610.jpg"
+    }
+  ];
 
 // RENDERIZAR TODA LA PÁGINA CON REACT
 function ContenedorApp() {
@@ -47,24 +78,10 @@ function ContenedorApp() {
             <Header />
             <h2>FASE ONE</h2>
             <section>
-                <Movie />
-                <Movie />
-                <Movie />
-                <article>
-                    <h3>Thor</h3>
-                    <div className="year">Publicada en 2011</div>
-                    <img alt="Portada de Thor" src="https://cl.buscafs.com/www.tomatazos.com/public/uploads/images/170606.jpg" />
-                </article>
-                <article>
-                    <h3>Capitán América: El primer vengador</h3>
-                    <div className="year">Publicada en 2011</div>
-                    <img alt="Portada de Capitán América: El primer vengador" src="https://cl.buscafs.com/www.tomatazos.com/public/uploads/images/170605.jpeg" />
-                </article>
-                <article>
-                    <h3>The Avengers</h3>
-                    <div className="year">Publicada en 2012</div>
-                    <img alt="Portada de The Avengers" src="https://cl.buscafs.com/www.tomatazos.com/public/uploads/images/170610.jpg" />
-                </article>
+                <Movie id={seed[0].id} nombre={seed[0].name} year = {seed[0].year} foto={seed[0].cover} />
+                <Movie id={seed[1].id} nombre={seed[1].name} year = {seed[1].year} foto={seed[1].cover} />
+                <Movie id={seed[2].id} nombre={seed[2].name} year = {seed[2].year} foto={seed[2].cover} />
+                <Movie id={seed[3].id} nombre={seed[3].name} year = {seed[3].year} foto={seed[3].cover} />
             </section>
         </React.Fragment>
 
